@@ -37,4 +37,16 @@ export const data: Data[] = [
     web: 'https://engine-drone.vercel.app/',
     code: 'https://github.com/EdTimmer/engine-drone',
   },
+  {
+    title: 'Game of Life',
+    imageName: 'life',
+    web: 'https://game-of-life-kappa-six.vercel.app/',
+    code: 'https://github.com/EdTimmer/game-of-life',
+  },
+  {
+    title: 'Collatz Plotter',
+    imageName: 'collatz',
+    web: 'http://collatzplotter.s3-website.us-east-2.amazonaws.com/',
+    code: 'https://github.com/EdTimmer/collatzplotter',
+  },
 ]
