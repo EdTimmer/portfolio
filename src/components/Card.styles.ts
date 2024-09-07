@@ -6,7 +6,7 @@ export const CardContainer = styled.div`
   border-radius: 0.5rem;
   padding: 2rem;
   width: 40rem;
-  /* min-height: 60rem; */
+  z-index: 3;
 `;
 
 export const CardTitle = styled.h2`
@@ -14,7 +14,6 @@ export const CardTitle = styled.h2`
   font-size: 2.4rem;
   margin-bottom: 2rem;
   letter-spacing: 0.1rem;
-  /* text-transform: lowercase; */
   padding: 0;
   font-weight: 300;
 `;

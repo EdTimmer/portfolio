@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import colors from './styles/colors';
 
 export const AppContainer = styled.div`
+  position: relative;
+  z-index: 1;
   background: ${colors.eerieBlack};
   font-family: 'Roboto Mono', monospace;
   padding: 5rem;
@@ -10,6 +12,16 @@ export const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+`;
+
+export const BackgroundCanvas = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Ensure background canvas is behind other content */
+  pointer-events: none; /* Prevent canvas from intercepting pointer events */
 `;
 
 export const Title = styled.h1`

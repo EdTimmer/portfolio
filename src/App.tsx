@@ -1,11 +1,20 @@
-import { AppContainer, Title, CardsContainer, TopRow, ContactRow, WebLink, Email, CenterSection } from './App.styles'
+import { AppContainer, Title, CardsContainer, TopRow, ContactRow, WebLink, Email, CenterSection, BackgroundCanvas } from './App.styles'
+import { Canvas } from '@react-three/fiber'
 import Card from './components/Card'
 import { data } from './assets/data/data'
 import { Data } from './types'
+import Water from './components/Water/Water'
 
 function App() {
   return (
     <AppContainer>
+      <BackgroundCanvas>
+        <Canvas camera={{ position: [0, 0.25, 0.5], fov: 75 }}>
+          <Water />
+          {/* <OrbitControls enableDamping /> */}
+        </Canvas>
+      </BackgroundCanvas>
+
       <TopRow>
         <Title>
           ed timmer
@@ -34,7 +43,7 @@ function App() {
           ))
         }
         </CardsContainer>
-      </CenterSection>      
+      </CenterSection>
     </AppContainer>
   )
 }
