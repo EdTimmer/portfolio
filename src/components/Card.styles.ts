@@ -37,7 +37,6 @@ export const LinksRow = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   gap: 2rem;
-  /* margin-bottom: 2rem; */
   margin-top: 2rem;
 `;
 
