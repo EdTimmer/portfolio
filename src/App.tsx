@@ -9,7 +9,7 @@ function App() {
   return (
     <AppContainer>
       <BackgroundCanvas>
-        <Canvas camera={{ position: [0, 0.25, 0.5], fov: 75 }}>
+        <Canvas camera={{ position: [0, 0.25, 0.42], fov: 75 }}>
           <Water />
           {/* <OrbitControls enableDamping /> */}
         </Canvas>
