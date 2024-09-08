@@ -28,7 +28,6 @@ export const ImageContainer = styled.div`
 export const CardImage = styled.img`
   width: 100%;
   height: 20rem;
-  margin-bottom: 2rem;
   object-fit: cover;
   border-radius: 0.5rem;
 `;
@@ -38,7 +37,8 @@ export const LinksRow = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   gap: 2rem;
-  margin-bottom: 2rem;
+  /* margin-bottom: 2rem; */
+  margin-top: 2rem;
 `;
 
 export const WebLink = styled.a`

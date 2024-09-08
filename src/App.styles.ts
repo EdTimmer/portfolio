@@ -41,6 +41,7 @@ export const CardsContainer = styled.div`
   justify-content: flex-start;
   gap: 4rem;
   flex-wrap: wrap;
+  margin-top: 10rem;
 `;
 
 export const TopRow = styled.div`
