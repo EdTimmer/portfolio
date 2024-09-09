@@ -67,6 +67,7 @@ export const WebLink = styled.a`
   font-size: 1.6rem;
   text-decoration-line: underline;
   text-underline-offset: 5px;
+  z-index: 3;
 `;
 
 export const Email = styled.p`
@@ -75,6 +76,7 @@ export const Email = styled.p`
   padding: 0;
   font-size: 1.6rem;
   text-decoration: none;
+  z-index: 3;
 `;
 
 export const CenterSection = styled.div`
