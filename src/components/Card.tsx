@@ -6,7 +6,7 @@ interface CardProps {
   title: string;
   imageName: string;
   web: string;
-  code: string;
+  code?: string;
 }
 
 function Card({ title, imageName, web, code }: CardProps) {
@@ -38,9 +38,9 @@ function Card({ title, imageName, web, code }: CardProps) {
           website
         </WebLink>
 
-        <WebLink href={code} target="_blank" rel="noopener noreferrer">
+        {code && (<WebLink href={code} target="_blank" rel="noopener noreferrer">
           code
-        </WebLink>
+        </WebLink>)}
       </LinksRow>
 
 
