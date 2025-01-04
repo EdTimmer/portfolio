@@ -5,7 +5,7 @@ export const data: Data[] = [
     title: 'Orion Logo',
     imageName: 'orion_01',
     web: 'https://metal-01.vercel.app/',
-    // code: 'https://github.com/EdTimmer/shaders-05',
+    code: 'https://github.com/EdTimmer/metal-01',
   },
   {
     title: 'Shaders 05',
