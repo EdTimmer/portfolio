@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import colors from '../styles/colors';
 
 export const CardContainer = styled.div`
-  background: ${colors.onyx};
+  /* background: ${colors.onyx}; */
+  background: rgba(52, 58, 64, 0.2);
+  backdrop-filter: blur(10px);
   border-radius: 0.5rem;
   padding: 2rem;
   width: 40rem;
@@ -18,7 +20,7 @@ export const CardTitle = styled.h2`
   font-weight: 300;
 `;
 
-export const ImageContainer = styled.div`
+export const ImageContainer = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;

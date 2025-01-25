@@ -35,13 +35,13 @@ export const Title = styled.h1`
 `;
 
 export const CardsContainer = styled.div`
-  width: 100%;
+  max-width: 70%;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   gap: 4rem;
   flex-wrap: wrap;
-  margin-top: 10rem;
+  margin-top: 20rem;
 `;
 
 export const TopRow = styled.div`

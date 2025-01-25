@@ -1,8 +1,8 @@
-import { useRef } from 'react'
+import { useCallback, useRef, useEffect } from 'react'
 import { useFrame, extend, ReactThreeFiber } from '@react-three/fiber'
 import { shaderMaterial } from '@react-three/drei'
 import { Color } from 'three'
-// import { GUI } from 'lil-gui'
+import { GUI } from 'lil-gui'
 import waterFragmentShader from '../../assets/shaders/water/fragment.glsl?raw'
 import waterVertexShader from '../../assets/shaders/water/vertex.glsl?raw'
 import * as THREE from 'three'
@@ -21,8 +21,6 @@ const WaterMaterial = shaderMaterial(
     uSurfaceColor: new Color('#495057'),
     uColorOffset: 0.08,
     uColorMultiplier: 5,
-    wireframe: true,
-    side: THREE.DoubleSide,
   },
   waterVertexShader,
   waterFragmentShader
@@ -54,40 +52,54 @@ const Water = () => {
     }
   })
 
-  // useEffect(() => {
-  //   // Debug GUI setup
-  //   const gui = new GUI({ width: 340 })
-  //   const debugObject = {
-  //     depthColor: '#186691',
-  //     surfaceColor: '#9bd8ff',
-  //   }
+  useEffect(() => {
+    // Debug GUI setup
+    const gui = new GUI({ 
+      width: 340,
+      title: ' ~~~ WAVE CONTROLS ~~~',
+    })
+    gui.domElement.classList.add('lil-gui');
 
-  //   gui.add(materialRef.current, 'uBigWavesElevation').min(0).max(1).step(0.001).name('wavesElevation')
-  //   gui.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'x').min(0).max(10).step(0.001).name('wavesFrequencyX')
-  //   gui.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'y').min(0).max(10).step(0.001).name('wavesFrequencyY')
-  //   gui.add(materialRef.current, 'uBigWavesSpeed').min(0).max(4).step(0.001).name('wavesSpeed')
-  //   gui.addColor(debugObject, 'depthColor').onChange(() => {
-  //     materialRef.current.uniforms.uDepthColor.value.set(debugObject.depthColor)
-  //   })
-  //   gui.addColor(debugObject, 'surfaceColor').onChange(() => {
-  //     materialRef.current.uniforms.uSurfaceColor.value.set(debugObject.surfaceColor)
-  //   })
-  //   gui.add(materialRef.current, 'uColorOffset').min(0).max(0.1).step(0.001).name('colorOffset')
-  //   gui.add(materialRef.current, 'uColorMultiplier').min(0).max(10).step(0.001).name('colorMultiplier')
-  //   gui.add(materialRef.current, 'uSmallWavesElevation').min(0).max(1).step(0.001).name('smallWavesElevation')
-  //   gui.add(materialRef.current, 'uSmallWavesFrequency').min(0).max(30).step(0.001).name('smallWavesFrequency')
-  //   gui.add(materialRef.current, 'uSmallWavesSpeed').min(0).max(4).step(0.001).name('smallWavesSpeed')
-  //   gui.add(materialRef.current, 'uSmallWavesIterations').min(0).max(5).step(1).name('smallWavesIterations')
+    gui.domElement.style.position = 'absolute'; // Customize the position
+    // guiB.domElement.style.right = '0'; // Move this panel to the left side of the screen
+    gui.domElement.style.top = '20px'; // Move it down slightly
 
-  //   return () => {
-  //     gui.destroy()
-  //   }
-  // }, [])
+    const debugObject = {
+      depthColor: '#186691',
+      surfaceColor: '#9bd8ff',
+    }
+
+    gui.add(materialRef.current, 'uBigWavesElevation').min(0).max(1).step(0.001).name('wavesElevation')
+    gui.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'x').min(0).max(10).step(0.001).name('wavesFrequencyX')
+    gui.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'y').min(0).max(10).step(0.001).name('wavesFrequencyY')
+    gui.add(materialRef.current, 'uBigWavesSpeed').min(0).max(4).step(0.001).name('wavesSpeed')
+    gui.addColor(debugObject, 'depthColor').onChange(() => {
+      materialRef.current.uniforms.uDepthColor.value.set(debugObject.depthColor)
+    })
+    gui.addColor(debugObject, 'surfaceColor').onChange(() => {
+      materialRef.current.uniforms.uSurfaceColor.value.set(debugObject.surfaceColor)
+    })
+    gui.add(materialRef.current, 'uColorOffset').min(0).max(0.1).step(0.001).name('colorOffset')
+    gui.add(materialRef.current, 'uColorMultiplier').min(0).max(10).step(0.001).name('colorMultiplier')
+    gui.add(materialRef.current, 'uSmallWavesElevation').min(0).max(1).step(0.001).name('smallWavesElevation')
+    gui.add(materialRef.current, 'uSmallWavesFrequency').min(0).max(30).step(0.001).name('smallWavesFrequency')
+    gui.add(materialRef.current, 'uSmallWavesSpeed').min(0).max(4).step(0.001).name('smallWavesSpeed')
+    gui.add(materialRef.current, 'uSmallWavesIterations').min(0).max(5).step(1).name('smallWavesIterations')
+
+    return () => {
+      gui.destroy()
+    }
+  }, [])
 
   return (
     <mesh ref={meshRef} rotation-x={Math.PI * 0.5}>
       <planeGeometry args={[6, 6, 512, 512]} />
-      <waterMaterial ref={materialRef} attach="material" />
+      <waterMaterial
+        ref={materialRef}
+        attach="material"
+        wireframe={true}
+        side={THREE.DoubleSide}
+      />
     </mesh>
   )
 }

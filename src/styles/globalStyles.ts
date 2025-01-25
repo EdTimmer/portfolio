@@ -13,6 +13,11 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+  @media (max-width: 768px) {
+    .lil-gui{
+      display: none !important;
+    }
+  }
 
   /* Next block defines what root 1rem is */
 

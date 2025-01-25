@@ -29,7 +29,7 @@ function Card({ title, imageName, web, code }: CardProps) {
     <CardContainer>
       <CardTitle>{title}</CardTitle>
 
-      <ImageContainer>
+      <ImageContainer href={web} target="_blank" rel="noopener noreferrer">
         <CardImage src={imageSrc} alt="project snapshot" />
       </ImageContainer>
 
