@@ -85,6 +85,7 @@ const Water = () => {
     gui.add(materialRef.current, 'uSmallWavesFrequency').min(0).max(30).step(0.001).name('smallWavesFrequency')
     gui.add(materialRef.current, 'uSmallWavesSpeed').min(0).max(4).step(0.001).name('smallWavesSpeed')
     gui.add(materialRef.current, 'uSmallWavesIterations').min(0).max(5).step(1).name('smallWavesIterations')
+    gui.add(materialRef.current, 'wireframe').name('wireframe')
 
     return () => {
       gui.destroy()
