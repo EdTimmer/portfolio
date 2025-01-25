@@ -13,6 +13,21 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  .lil-gui {
+    font-size: 16px; /* Adjust the font size */
+  }
+
+  /* Style the lil-gui labels */
+  .lil-gui .dg .c {
+    font-size: 16px; /* Adjust the control labels */
+  }
+
+  /* Style the lil-gui folder titles */
+  .lil-gui .dg .title {
+    font-size: 18px; /* Adjust the folder titles */
+  }
+
   @media (max-width: 768px) {
     .lil-gui{
       display: none !important;

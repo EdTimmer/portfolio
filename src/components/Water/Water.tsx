@@ -1,4 +1,4 @@
-import { useCallback, useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 import { useFrame, extend, ReactThreeFiber } from '@react-three/fiber'
 import { shaderMaterial } from '@react-three/drei'
 import { Color } from 'three'
@@ -55,7 +55,7 @@ const Water = () => {
   useEffect(() => {
     // Debug GUI setup
     const gui = new GUI({ 
-      width: 340,
+      width: 400,
       title: ' ~~~ WAVE CONTROLS ~~~',
     })
     gui.domElement.classList.add('lil-gui');
