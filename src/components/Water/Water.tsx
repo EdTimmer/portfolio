@@ -67,8 +67,8 @@ const Water = () => {
     gui.close() // Close the GUI by default
 
     const debugObject = {
-      depthColor: '#186691',
-      surfaceColor: '#9bd8ff',
+      depthColor: '#1e6b94',
+      surfaceColor: '#63c2fd',
     }
     
     const colorsFolder = gui.addFolder('Colors')
