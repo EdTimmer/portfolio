@@ -76,11 +76,11 @@ const Water = () => {
     const smallWavesFolder = gui.addFolder('Small Waves')
     const materialFolder = gui.addFolder('Material')
 
-    colorsFolder.addColor(debugObject, 'depthColor').onChange(() => {
-      materialRef.current.uniforms.uDepthColor.value.set(debugObject.depthColor)
-    })
     colorsFolder.addColor(debugObject, 'surfaceColor').onChange(() => {
       materialRef.current.uniforms.uSurfaceColor.value.set(debugObject.surfaceColor)
+    })
+    colorsFolder.addColor(debugObject, 'depthColor').onChange(() => {
+      materialRef.current.uniforms.uDepthColor.value.set(debugObject.depthColor)
     })
     colorsFolder.add(materialRef.current, 'uColorOffset').min(0).max(0.1).step(0.001).name('colorOffset')
     colorsFolder.add(materialRef.current, 'uColorMultiplier').min(0).max(10).step(0.001).name('colorMultiplier')
