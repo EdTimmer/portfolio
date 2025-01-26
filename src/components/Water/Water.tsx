@@ -61,8 +61,8 @@ const Water = () => {
     gui.domElement.classList.add('lil-gui');
 
     gui.domElement.style.position = 'absolute'; // Customize the position
-    gui.domElement.style.right = '50px'; // Move this panel to the left side of the screen
-    gui.domElement.style.top = '50px'; // Move it down slightly
+    gui.domElement.style.right = '60px'; // Move this panel to the left side of the screen
+    gui.domElement.style.top = '60px'; // Move it down slightly
 
     gui.close() // Close the GUI by default
 
