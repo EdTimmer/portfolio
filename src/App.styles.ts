@@ -32,6 +32,7 @@ export const Title = styled.h1`
   text-transform: lowercase;
   padding: 0;
   font-weight: 300;
+  z-index: 3;
 `;
 
 export const CardsContainer = styled.div`
@@ -42,6 +43,11 @@ export const CardsContainer = styled.div`
   gap: 4rem;
   flex-wrap: wrap;
   margin-top: 20rem;
+
+  @media (max-width: 1000px) {
+    max-width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const TopRow = styled.div`
