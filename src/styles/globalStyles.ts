@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import colors from './colors';
 
 export default createGlobalStyle`
   * {
@@ -16,6 +17,8 @@ export default createGlobalStyle`
 
   .lil-gui {
     font-size: 16px; /* Adjust the font size */
+    font-family: 'Roboto Mono', monospace;
+    /* color: ${colors.seasalt}; */
   }
 
   /* Style the lil-gui labels */
@@ -23,12 +26,16 @@ export default createGlobalStyle`
     font-size: 16px; /* Adjust the control labels */
   }
 
-  /* Style the lil-gui folder titles */
-  .lil-gui .dg .title {
-    font-size: 18px; /* Adjust the folder titles */
+  .lil-gui > .title {
+    font-size: 20px ;
+    margin: 0;
+    letter-spacing: 1.0rem;
+    padding: 4px;
+    font-weight: 400;
+    height: 34px;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1000px) {
     .lil-gui{
       display: none !important;
     }

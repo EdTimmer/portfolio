@@ -17,8 +17,8 @@ const WaterMaterial = shaderMaterial(
     uSmallWavesFrequency: 3,
     uSmallWavesSpeed: 0.1,
     uSmallWavesIterations: 3,
-    uDepthColor: new Color('#343a40'),
-    uSurfaceColor: new Color('#495057'),
+    uDepthColor: new Color('#1e6b94'), //#343a40
+    uSurfaceColor: new Color('#63c2fd'), //#495057
     uColorOffset: 0.08,
     uColorMultiplier: 5,
   },
@@ -55,8 +55,8 @@ const Water = () => {
   useEffect(() => {
     // Debug GUI setup
     const gui = new GUI({ 
-      width: 400,
-      title: '   🌊🌊🌊  Wave Controls  🌊🌊🌊',
+      width: 460,
+      title: '🌊 Wave Controls  🌊',
     })
     gui.domElement.classList.add('lil-gui');
 
@@ -64,28 +64,40 @@ const Water = () => {
     gui.domElement.style.right = '50px'; // Move this panel to the left side of the screen
     gui.domElement.style.top = '50px'; // Move it down slightly
 
+    gui.close() // Close the GUI by default
+
     const debugObject = {
       depthColor: '#186691',
       surfaceColor: '#9bd8ff',
     }
+    
+    const colorsFolder = gui.addFolder('Colors')
+    const bigWavesFolder = gui.addFolder('Big Waves')
+    const smallWavesFolder = gui.addFolder('Small Waves')
+    const materialFolder = gui.addFolder('Material')
 
-    gui.add(materialRef.current, 'uBigWavesElevation').min(0).max(1).step(0.001).name('wavesElevation')
-    gui.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'x').min(0).max(10).step(0.001).name('wavesFrequencyX')
-    gui.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'y').min(0).max(10).step(0.001).name('wavesFrequencyY')
-    gui.add(materialRef.current, 'uBigWavesSpeed').min(0).max(4).step(0.001).name('wavesSpeed')
-    gui.addColor(debugObject, 'depthColor').onChange(() => {
+    colorsFolder.addColor(debugObject, 'depthColor').onChange(() => {
       materialRef.current.uniforms.uDepthColor.value.set(debugObject.depthColor)
     })
-    gui.addColor(debugObject, 'surfaceColor').onChange(() => {
+    colorsFolder.addColor(debugObject, 'surfaceColor').onChange(() => {
       materialRef.current.uniforms.uSurfaceColor.value.set(debugObject.surfaceColor)
     })
-    gui.add(materialRef.current, 'uColorOffset').min(0).max(0.1).step(0.001).name('colorOffset')
-    gui.add(materialRef.current, 'uColorMultiplier').min(0).max(10).step(0.001).name('colorMultiplier')
-    gui.add(materialRef.current, 'uSmallWavesElevation').min(0).max(1).step(0.001).name('smallWavesElevation')
-    gui.add(materialRef.current, 'uSmallWavesFrequency').min(0).max(30).step(0.001).name('smallWavesFrequency')
-    gui.add(materialRef.current, 'uSmallWavesSpeed').min(0).max(4).step(0.001).name('smallWavesSpeed')
-    gui.add(materialRef.current, 'uSmallWavesIterations').min(0).max(5).step(1).name('smallWavesIterations')
-    gui.add(materialRef.current, 'wireframe').name('wireframe')
+    colorsFolder.add(materialRef.current, 'uColorOffset').min(0).max(0.1).step(0.001).name('colorOffset')
+    colorsFolder.add(materialRef.current, 'uColorMultiplier').min(0).max(10).step(0.001).name('colorMultiplier')
+
+    bigWavesFolder.add(materialRef.current, 'uBigWavesElevation').min(0).max(1).step(0.001).name('wavesElevation')
+    bigWavesFolder.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'x').min(0).max(10).step(0.001).name('wavesFrequencyX')
+    bigWavesFolder.add(materialRef.current.uniforms.uBigWavesFrequency.value, 'y').min(0).max(10).step(0.001).name('wavesFrequencyY')
+    bigWavesFolder.add(materialRef.current, 'uBigWavesSpeed').min(0).max(4).step(0.001).name('wavesSpeed')
+
+
+    smallWavesFolder.add(materialRef.current, 'uSmallWavesElevation').min(0).max(1).step(0.001).name('smallWavesElevation')
+    smallWavesFolder.add(materialRef.current, 'uSmallWavesFrequency').min(0).max(30).step(0.001).name('smallWavesFrequency')
+    smallWavesFolder.add(materialRef.current, 'uSmallWavesSpeed').min(0).max(4).step(0.001).name('smallWavesSpeed')
+    smallWavesFolder.add(materialRef.current, 'uSmallWavesIterations').min(0).max(5).step(1).name('smallWavesIterations')
+
+    materialFolder.add(materialRef.current, 'wireframe').name('wireframe')
+    
 
     return () => {
       gui.destroy()
