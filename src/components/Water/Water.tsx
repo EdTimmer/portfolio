@@ -56,7 +56,7 @@ const Water = () => {
     // Debug GUI setup
     const gui = new GUI({ 
       width: 460,
-      title: '🌊 Wave Controls  🌊',
+      title: '🌊Wave Controls🌊',
     })
     gui.domElement.classList.add('lil-gui');
 
