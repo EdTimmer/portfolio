@@ -64,7 +64,7 @@ const Water = () => {
     gui.domElement.style.right = '60px'; // Move this panel to the left side of the screen
     gui.domElement.style.top = '60px'; // Move it down slightly
 
-    gui.close() // Close the GUI by default
+    // gui.close() // Close the GUI by default
 
     const debugObject = {
       depthColor: '#1e6b94',
