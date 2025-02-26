@@ -2,6 +2,12 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
   {
+    title: 'Orion Panels',
+    imageName: 'orion_panels',
+    web: 'https://orion-panels.vercel.app/',
+    code: 'https://github.com/EdTimmer/panels',
+  },
+  {
     title: 'Orion Logo',
     imageName: 'orion_01',
     web: 'https://metal-01.vercel.app/',

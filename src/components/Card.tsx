@@ -13,15 +13,15 @@ function Card({ title, imageName, web, code }: CardProps) {
   const [imageSrc, setImageSrc] = useState(null);
 
   useEffect(() => {
-      const loadImage = async () => {
-          try {
-              const image = await import(`../assets/images/${imageName}.jpg`);
-              setImageSrc(image.default);
-          } catch (error) {
-              console.error('Error loading image:', error);
-          }
-      };
-      loadImage();
+    const loadImage = async () => {
+        try {
+            const image = await import(`../assets/images/${imageName}.jpg`);
+            setImageSrc(image.default);
+        } catch (error) {
+            console.error('Error loading image:', error);
+        }
+    };
+    loadImage();
   }, [imageName]);
 
   if (!imageSrc) return <div>Loading...</div>;
