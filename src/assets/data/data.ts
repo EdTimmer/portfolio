@@ -2,6 +2,12 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
   {
+    title: 'Curvature',
+    imageName: 'curvature',
+    web: 'https://curvature-opal.vercel.app/',
+    code: 'https://github.com/EdTimmer/curvature',
+  },
+  {
     title: 'Orion Panels',
     imageName: 'orion_panels',
     web: 'https://orion-panels.vercel.app/',
