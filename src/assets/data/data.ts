@@ -2,6 +2,12 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
   {
+    title: 'Elements Pins',
+    imageName: 'elements',
+    web: 'https://elements-pins.vercel.app/',
+    code: 'https://github.com/EdTimmer/elements-pins',
+  },
+  {
     title: 'Curvature',
     imageName: 'curvature',
     web: 'https://curvature-opal.vercel.app/',
