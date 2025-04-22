@@ -2,6 +2,12 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
   {
+    title: 'Orbital Express',
+    imageName: 'orbital',
+    web: 'https://orbital-wheat.vercel.app/',
+    code: 'https://github.com/EdTimmer/orbital',
+  },
+  {
     title: 'Elements Pins',
     imageName: 'elements',
     web: 'https://elements-pins.vercel.app/',
