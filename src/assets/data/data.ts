@@ -2,6 +2,12 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
   {
+    title: 'Bee Bots',
+    imageName: 'bee-bots',
+    web: 'https://bee-bot.vercel.app/',
+    code: 'https://github.com/EdTimmer/bee-bot',
+  },
+  {
     title: 'Orbital Express',
     imageName: 'orbital',
     web: 'https://orbital-wheat.vercel.app/',
