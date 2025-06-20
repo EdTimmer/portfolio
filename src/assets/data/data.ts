@@ -2,6 +2,12 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
   {
+    title: 'Agent Hive AI',
+    imageName: 'agent-hive-ai',
+    web: 'https://ai-interface-zeta.vercel.app/',
+    code: 'https://github.com/EdTimmer/ai-interface',
+  },
+  {
     title: 'Bee Bots',
     imageName: 'bee-bots',
     web: 'https://bee-bot.vercel.app/',
