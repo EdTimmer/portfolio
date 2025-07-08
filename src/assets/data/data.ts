@@ -1,6 +1,12 @@
 import { Data } from "../../types";
 
 export const data: Data[] = [
+    {
+    title: 'Delta Agents',
+    imageName: 'delta-agents',
+    web: 'https://delta-agents.vercel.app/',
+    code: 'https://github.com/EdTimmer/delta-agents',
+  },
   {
     title: 'Agent Hive AI',
     imageName: 'agent-hive-ai',
