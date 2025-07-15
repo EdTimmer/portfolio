@@ -2,7 +2,7 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
     {
-    title: 'Delta Agents',
+    title: 'Demo - 3D',
     imageName: 'demo-3d',
     web: 'https://demo-3d-six.vercel.app/',
     code: 'https://github.com/EdTimmer/demo-3d',
