@@ -1,7 +1,13 @@
 import { Data } from "../../types";
 
 export const data: Data[] = [
-    {
+  {
+    title: 'Tiles',
+    imageName: 'tiles',
+    web: 'https://tiles-six.vercel.app/hex-tiles',
+    code: 'https://github.com/EdTimmer/tiles',
+  },
+  {
     title: 'Demo - 3D',
     imageName: 'demo-3d',
     web: 'https://demo-3d-six.vercel.app/',
