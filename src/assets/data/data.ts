@@ -2,6 +2,12 @@ import { Data } from "../../types";
 
 export const data: Data[] = [
   {
+    title: 'Hollow Knight Scene',
+    imageName: 'hollow-knight-scene',
+    web: 'https://hollow-knight-scene.vercel.app/',
+    code: 'https://github.com/EdTimmer/hollow-knight-scene',
+  },
+  {
     title: 'Tiles',
     imageName: 'tiles',
     web: 'https://tiles-six.vercel.app/hex-tiles',

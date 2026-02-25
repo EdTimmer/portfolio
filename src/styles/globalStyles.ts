@@ -29,7 +29,7 @@ export default createGlobalStyle`
   .lil-gui > .title {
     font-size: 20px ;
     margin: 0;
-    letter-spacing: 1.0rem;
+    /* letter-spacing: 1.0rem; */
     padding: 4px;
     font-weight: 400;
     height: 34px;
